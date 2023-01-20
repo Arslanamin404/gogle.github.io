@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Google</title>
+    <link
+      rel="shortcut icon"
+      href="../img/Google-favicon.png"
+      type="image/x-icon"
+    />
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+      overflow: hidden;
+    }
+    .top {
+      margin: 0px 30px 20px;
+      display: inline-block;
+      width: 100vw;
+    }
+    .top > ul {
+      margin-right: 10px;
+    }
+    .top > ul > li {
+      list-style: none;
+      float: right;
+      padding: 20px 15px 15px 0px;
+    }
+    .top > ul > li > a {
+      color: #212121;
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      text-decoration: none;
+    }
+    .top > ul > li > a > img {
+      margin: 0px 15px;
+    }
+    .top > ul > li > a:hover {
+      text-decoration: underline;
+    }
+    .mainimage {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      position: relative;
+    }
+    .mainimage > img {
+      margin: 0px auto 20px auto;
+      max-width: 100%;
+      max-height: 100%;
+    }
+    .searchBar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .search {
+      width: 100%;
+      max-width: 700px;
+      display: flex;
+      align-items: center;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      border-radius: 60px;
+      padding: 10px 20px;
+    }
+    .search:hover {
+      box-shadow: 3px 3px 5px 3px #ccc; /* horizontal, vertical, blur-radius,spread, color */
+    }
+    .search .icon {
+      width: 20px;
+    }
+    .search input {
+      background: transparent;
+      flex: 1;
+      margin: 0px 10px;
+      border: none;
+      outline: none;
+      font-size: 20px;
+      color: grey;
+    }
+    .search button img {
+      width: 25px;
+    }
+    .search button {
+      background: transparent;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 20px auto;
+    }
+    .btn button {
+      background-color: #f8f9fa;
+      padding: 10px;
+      margin: 10px;
+      border: none;
+      font-size: 15px;
+    }
+    .a:hover {
+      border-radius: 5px;
+      box-shadow: 1.2px 1.2px 1.6px 2px rgb(210, 209, 209);
+    }
+    .b:hover {
+      border-radius: 5px;
+      box-shadow: 1.2px 1.2px 1.6px 2px rgb(210, 209, 209);
+    }
+    .language {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .language span {
+      color: #696969;
+      font-size: 13px;
+    }
+    .language a {
+      line-height: 28px;
+      color: #1A0DAB;
+      text-decoration: none;
+      margin: 0px 5px;
+      font-size: 13px;
+    }
+    .language a:hover {
+      text-decoration: underline;
+    }
+    .footer{
+        position: absolute;
+        bottom: 0;
+        background-color: #F2F2F2;
+        width: 100vw;
+        padding: 20px;
+    }
+    .footer .left{
+        display: inline-block;
+    }
+    .footer .right{
+        display: inline-block;
+        float:right;
+    }
+    .footer a{
+        margin: 0px 20px;
+        text-decoration: none;
+        color: #5b5f62;
+        font-size: 15px;
+    }
+    .footer a:hover{
+        text-decoration: underline;
+    }
+    @media screen and (min-width: 721px) and (max-width:1023px) {
+      .mainimage > img {
+        width: 180px;
+      }
+      .search {
+        padding: 12px 20px;
+      }
+      .search .icon {
+        width: 25px;
+      }
+      .btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 20px auto;
+      }
+      .btn button {
+        background-color: #f8f9fa;
+        padding: 10px;
+        margin: 10px;
+        border: none;
+        font-size: 15px;
+      }
+      .a:hover {
+        border-radius: 5px;
+        box-shadow: 1.2px 1.2px 1.6px 2px rgb(210, 209, 209);
+      }
+      .b:hover {
+        border-radius: 5px;
+        box-shadow: 1.2px 1.2px 1.6px 2px rgb(210, 209, 209);
+      }
+      .language {
+        margin: 10px 80px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+      .language span {
+        color: #696969;
+        font-size: 14px;
+      }
+      .language a {
+        color: blue;
+        text-decoration: none;
+        margin: 0px 5px;
+        font-size: 13px;
+      }
+      .language a:hover {
+        text-decoration: underline;
+      }
+      .footer a{
+        margin: 0px 10px;
+        font-size: 12px;
+    }
+    }
+      @media screen and (max-width: 720px) {
+        .top {
+          margin: 0px 15px 10px;
+          display: inline-block;
+          width: 100vw;
+        }
+        .top > ul {
+          margin-right: 10px;
+        }
+        .top > ul > li {
+          padding: 20px 10px 10px 0px;
+        }
+        .top > ul > li > a {
+          font-size: 14px;
+        }
+        .top > ul > li > a > img {
+          margin: 0px 10px;
+        }
+        .mainimage > img {
+          width: 130px;
+        }
+        .search {
+          margin: 0px 10px;
+          padding: 5px 15px;
+        }
+        .search:hover {
+          box-shadow: 3px 3px 5px 3px #ccc; /* horizontal, vertical, blur-radius,spread, color */
+        }
+        .search button img {
+          width: 20px;
+        }
+        .btn {
+          display: none;
+        }
+        .language {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: center;
+          margin: 20px;
+        }
+        .language span {
+          color: #696969;
+          font-size: 15px;
+          margin: 10px 100px;
+        }
+        .language a {
+          margin: 6px 10px;
+          font-size: 12px;
+        }
+        .footer{
+            display: none;
+        }
+      }
+  </style>
+  <body>
+    <div class="top">
+      <ul>
+        <li title="More-Apps">
+          <a href="#"
+            ><img
+              src="../img/more-apps.png"
+              alt=""
+              class="more-apps"
+              width="24px"
+              height="24px"
+          /></a>
+        </li>
+        <li><a href="#">Images</a></li>
+        <li><a href="mailto:">Gmail</a></li>
+      </ul>
+    </div>
+
+    <div class="mainimage">
+      <img src="../img/Google.png" alt="Google" width="272px" />
+    </div>
+    <div class="searchBar">
+      <form action="post" class="search">
+        <div><img src="../img/search.jpeg" alt="search" class="icon" /></div>
+        <input type="text" title="Search" />
+        <button type="submit" class="lens" title="Google Lens">
+          <img src="../img/Google-lens.svg" alt="Search" />
+        </button>
+      </form>
+    </div>
+    <div class="btn">
+      <button class="a">Google Search</button>
+      <button class="b">I'm Feeling Lucky</button>
+    </div>
+    <div class="language">
+      <span class="leng-offred">Google offered in:</span>
+      <a href="#"> हिन्दी </a
+      > <a href="#"> বাংলা</a><a href="#"> తెలుగు</a><a href="#"> मराठी</a
+      ><a href="#"> தமிழ்</a><a href="#"> ગુજરાતી</a><a href="#"> ಕನ್ನಡ</a
+      ><a href="#"> മലയാളം</a><a href="#">ਪੰਜਾਬੀ</a>
+    </div>
+    <div class="footer">
+        <div class="left">
+            <a href="#">About</a><a href="#">Advertising</a><a href="#">Business</a><a href="#">How Search Works</a><a href="https://instagram.com/_.arsl_an">Mohammad Arsalan Rather</a>
+        </div>
+        <div class="right">
+            <a href="#">Privacy</a><a href="#">Terms</a><a href="#">Settings</a>
+        </div>
+
+    </div>
+  </body>
+</html>
